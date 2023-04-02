@@ -1,0 +1,3 @@
+FROM mongo:5.0.10-focal
+
+EXPOSE 27017

@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  users:
+    build:
+      context: ./backend/users
+    container_name: ooca_users
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./backend/users/:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
+    stdin_open: true
+    tty: true
+  mongo:
+    build:
+      context: ./backend/db
+    container_name: ooca_mongodb
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - ~/mongodb_ooca:/data/db
