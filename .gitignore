@@ -98,3 +98,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# ignore jest test-report.xml
+test-report.xml
