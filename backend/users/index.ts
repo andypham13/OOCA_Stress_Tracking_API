@@ -3,6 +3,8 @@ import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { userRouter } from './routes/user.route';
+import helmet from 'helmet';
+import expressFileUpload from 'express-fileupload';
 
 // environment selection
 if (process.argv[2] !== 'local') {
@@ -21,7 +23,15 @@ mongoose.connect(mongoUri)
 .then(() => console.log('Connected to MongoDB...'))
 .catch(() => console.error('Could not connect to MongoDB...'));
 
+app.use(helmet());
 app.use(express.json());
+app.use(expressFileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles: true,
+    tempFileDir: process.env.PUBLIC_PATH
+}));
+
+app.use(express.static('public'));
 app.use(userRouter);
 
 app.use((req: Request, res: Response) => {

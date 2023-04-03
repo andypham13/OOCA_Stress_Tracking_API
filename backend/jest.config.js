@@ -10,7 +10,7 @@ const jestConfig = {
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/'
   ],
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     '**/*.ts',
     '!**/node_modules/**',

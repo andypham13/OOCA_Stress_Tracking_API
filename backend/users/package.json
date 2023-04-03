@@ -10,22 +10,25 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
     "helmet": "^5.1.1",
     "joi": "^17.6.0",
-    "nodemon": "^2.0.19",
-    "uuid": "^8.3.2",
-    "dotenv": "^16.0.1",
     "mongoose": "^6.5.1",
+    "nodemon": "^2.0.19",
     "ts-jest": "latest",
     "ts-node": "^10.7.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.4",
     "@types/express": "^4.17.13",
+    "@types/express-fileupload": "^1.4.0",
     "@types/jest": "latest",
-    "@types/node": "^17.0.31"
+    "@types/node": "^17.0.31",
+    "@types/uuid": "^8.3.4",
+    "@types/helmet": "^0.0.45"
   },
   "keywords": [],
   "author": "Andy Pham",

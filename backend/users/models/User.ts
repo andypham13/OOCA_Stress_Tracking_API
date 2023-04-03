@@ -1,18 +1,39 @@
 import mongoose from 'mongoose';
 
+interface UserDocument extends mongoose.Document {
+  name: string;
+  email: string;
+  stressLevelsSubmissions: {
+    date: Date;
+    stressLevel: number;
+    attachment: string;
+  }[];
+}
+
+const stressLevelSubmissionSchema = new mongoose.Schema({
+  date: {
+    type: Date,
+  },
+  stressLevel: {
+    type: Number,
+  },
+  attachment: {
+    type: String,
+  },
+  description: {
+    type: String,
+  },
+}, { _id: false, timestamps: true});
+
 const userSchema = new mongoose.Schema({
   name: {
-    type: String
+    type: String,
   },
   email: {
     type: String
   },
   stressLevelsSubmissions: {
-    type: [{
-      date: Date,
-      stressLevel: Number,
-      attachment: String,
-    }],
+    type: [stressLevelSubmissionSchema],
   },
 }, { timestamps: true });
 
@@ -30,4 +51,4 @@ userSchema.pre('save', function (next) {
 
 const User = mongoose.model('User', userSchema);
 
-export { User };
+export { User, UserDocument };
