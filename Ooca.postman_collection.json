@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "3e815b86-891b-4db7-bebf-8393ca20693c",
+		"name": "Ooca",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17758657"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ooca\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postStressLevel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "asdasd",
+							"type": "file",
+							"src": "/E:/Downloads/photo-1526547541286-73a7aaa08f2a.jfif"
+						},
+						{
+							"key": "stressLevel",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "I feel relaxing",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5050/stress-levels/Ooca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"stress-levels",
+						"Ooca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStressLevels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5050/stress-levels/Ooca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"stress-levels",
+						"Ooca"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
